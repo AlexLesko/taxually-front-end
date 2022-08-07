@@ -1,0 +1,46 @@
+<div>
+    <h2>Hello {{user?.firstName}} {{user?.lastName}}!</h2>
+
+    <div>
+        <button class="btn btn-primary btn-lg" (click)="AddNewFile()">Add new File</button>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <th (click)="SortTable()">
+                File Name
+
+                <i *ngIf="sortDirection" class="bi bi-sort-alpha-down"></i>
+
+                <i *ngIf="!sortDirection" class="bi bi-sort-alpha-down-alt"></i>
+            </th>
+            <th>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="searchString"
+                      placeholder="Type to search..."
+                      (keyup)="FilterTable($event)"
+                    />
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let file of userFiles">
+                <td>{{file.fileTitle}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="DeleteFiles(file)">Delete File</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="addFile">
+    <div class="input-group-file">
+        Select File:
+        <input type="file" class="file-upload" (change)="onFileSelected($event)">
+    </div>
+    <div>
+        <button class="btn btn-primary btn-lg" (click)="UploadFile()">Upload File</button>
+    </div>
+</div>
