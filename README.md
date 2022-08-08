@@ -1,27 +1,14 @@
 # TaxuallyFrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
-
-## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+This project was created to create new user who can login to the site and then be able to store and delete files.
+For the store I used localStorage so 5MB is the maximum what you can upload(it can be 10MB depend on your browser support)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+For the files there is no option the preview it or download them.
 
-## Build
+The files are converted to Base64 format to store it in the database(in this case localStorage).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The files is sortable and filterable.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To remove the users from the localStorage you have to clear the cache.
